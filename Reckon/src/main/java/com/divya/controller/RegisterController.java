@@ -49,7 +49,7 @@ public class RegisterController extends HttpServlet {
 				
 				if(result) {
 			        
-					html = "<html><body> <center>THANK YOU "+user.email+"<br>Registration Success<br><br>"
+					html = "<html> <body style=\"background-color:Moccasin ;\"> <center>THANK YOU "+user.name+"<br>Login Success"
 							+ "<a href='home.jsp'> Enter Home</a>"
 							+ "</center></body></html>";
 				}else {

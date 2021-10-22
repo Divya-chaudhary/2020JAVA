@@ -59,11 +59,11 @@ public class LoginController extends HttpServlet {
 					HttpSession session = request.getSession();
 					session.setAttribute("keyUser", user);
 								
-					html = "<html><body><center>THANK YOU "+user.name+"<br>Login Success"
+					html = "<html> <body style=\"background-color:Moccasin ;\"> <center>THANK YOU "+user.name+"<br>Login Success"
 							+ "<a href='home.jsp'> Enter Home </a>"
 							+ "</center></body></html>";
 				}else {
-					html = "<html><body><center>Invalid Credentials"+user.email+"<br>Please try Again</center></body></html>";
+					html = "<html><body style=\"background-color:Moccasin ;\"><center>Invalid Credentials"+user.email+"<br>Please try Again</center></body></html>";
 				}
 
 				//writer.println(message);

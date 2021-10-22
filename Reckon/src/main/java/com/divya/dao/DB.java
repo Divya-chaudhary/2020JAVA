@@ -124,6 +124,8 @@ public ArrayList<Loan> fetchLoans(String userId) {
 	    		loan.totalvalue = document.getDouble("totalvalue");
 	    		loanRecords.add(loan);
 	    		
+	    		System.out.println(loan);
+	    		
 	    	}
 		}catch(Exception e) {
 			System.out.println("Something Went Wrong: "+e);
@@ -132,33 +134,50 @@ public ArrayList<Loan> fetchLoans(String userId) {
 		return loanRecords;
     	
 	}
+//  public DBObject findDocumentById(String loanId) {
+//
+//    BasicDBObject query = new BasicDBObject();
+//    query.put("loanId", new ObjectId(loanId));
+//
+//    DBObject dbObj = collection.findOne(query);
+//    return dbObj;
+//      }
 
-public void updateFever(double fever, String feverId) {
+public void updateDetails(String loanId ,String borrowername,String ph,String address,Double loan,Double rateofinterest, Double duration) {
 	
 	BasicDBObject query = new BasicDBObject();
-	query.put("feverId", feverId);
+	query.put("_id", new ObjectId(loanId));
 	
-	MongoCursor<Document> cursor = mongoClient.getDatabase("gw2021pj1").getCollection("fevers").find(query).iterator();
+	System.out.println();
+	
+	System.out.println("loanId"+loanId);
+	
+	MongoCursor<Document> cursor = mongoClient.getDatabase("gw2021java").getCollection("customers").find(query).iterator();
 	Document document = cursor.next();
-	
-	document.put("fever", fever);
-	
+	System.out.println(document.getObjectId("_id"));
+	document.put("loan",loan);
+	document.put("borrowername",borrowername);
+	document.put("ph",ph);
+	document.put("address",address);
+	document.put("rateofinterest",rateofinterest);
+	document.put("duration",duration);
+	System.out.println("doc: "+document.toString());
 	//Update into DataBase
-	mongoClient.getDatabase("gw2021pj1").getCollection("fevers").updateOne(query, document);
-	System.out.println("Fever Updated");
+	mongoClient.getDatabase("gw2021java").getCollection("customers").replaceOne(query, document);
+	System.out.println("Loan Details Updated");
 	
 }
 
-public void deleteFever(String feverId) {
+public void deleteDetails(String loanId) {
 	
-	System.out.println("[DB] Deleting Fever:"+feverId);
+	System.out.println("[DB] Deleting Loan Record:"+loanId);
 	
 	BasicDBObject query = new BasicDBObject();
 	
-	query.put("_id", new ObjectId(feverId));
+	query.put("_id", new ObjectId(loanId));
 	
 	// Fetching the Data
-	mongoClient.getDatabase("gw2021pj1").getCollection("fevers").deleteOne(query);
+	mongoClient.getDatabase("gw2021java").getCollection("customers").deleteOne(query);
 	
 }
 

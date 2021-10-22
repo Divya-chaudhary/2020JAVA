@@ -14,23 +14,17 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 <style>
-body {
-  background-image: url('money.jpg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;  
-  background-size: cover;
-}
 </style>
 </head>
 
-<body>
+<body style= "background-color:Moccasin ;"> 
     <%
 		User user = (User)session.getAttribute("keyUser");
 	%>
 <div class="container">
-  <p class="bg-light text-dark">Welcome Home, Dear <%= user.name %></p>
-    <p class="bg-light text-dark"><%= user.email %></p>
-     <p class="bg-light text-dark"><%= user.phonenumber%></p>
+ <p class="text-body">Welcome Home, Dear <%= user.name %></p>
+  <p class="text-body"><%= user.email %></p>
+    <p class="text-body"><%= user.phonenumber%></p>
 </div>
 
 <div class="container">
@@ -76,8 +70,6 @@ body {
       
       
     <div class="form-group">
-    
-   
     <div class="form-check-inline">
       <label class="form-check-label" for="radio1">
         <input type="radio" class="form-check-input" id="radio1" name="type" value="months" checked>MONTHS

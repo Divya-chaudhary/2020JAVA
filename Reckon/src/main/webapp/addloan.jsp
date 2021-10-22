@@ -67,6 +67,7 @@
 	<p>Amount of <%= loan.loan %></p>
 	<p>Given to <%= loan.borrowername %></p>
 	<p>At interest of <%= loan.rateofinterest %>%</p>
+    <p>For Duration of <%= loan.duration %></p>
 		<a href="viewloan.jsp">VIEW NET LOAN DETAILS OF BORROWERS  </a>
 	
 	

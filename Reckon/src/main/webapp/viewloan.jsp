@@ -14,7 +14,9 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
    
- 
+   
+       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+   
 
 <meta charset="utf-8">
 <link rel="stylesheet"
@@ -33,26 +35,6 @@
 		User user = (User)session.getAttribute("keyUser");
 		DB db = new DB();
 	%>
-
-	<%-- 	<center>
-		<h3>All Fevers </h3>
-		
-		<%
-			ArrayList<Fever> fevers = db.fetchFevers(user._id);
-		
-			for(Fever fever : fevers){
-				
-		%>
-			
-			Fever: <%= fever.fever %>
-			<br/>
-			
-		<%			
-				
-			}
-		%>
-		
-	</center> --%>
 	
 	
 <div class="container">
@@ -96,7 +78,7 @@
 					<td><%= loan.loan %></td>
 					<td><strong><p style="color:orange;"><%= loan.interestearned %> </p></strong></td>
 					<td><strong><p style="color:orange;"><%= loan.totalvalue %></p></strong></td>
-					<td><a href=''>UPDATE</a> <a href=''> <a href="#" class="btn btn-warning btn-lg"><span class="glyphicon glyphicon-trash"></span> 
+			   <td><a href='action.jsp?action=update&loanid=<%=loan._id%>&borrowername=<%=loan.borrowername%>&ph=<%=loan.ph%>&address=<%=loan.address%>&duration=<%=loan.duration%>&rateofinterest=<%=loan.rateofinterest%>&loan=<%=loan.loan%>' class="btn btn-info btn-lg"><span class="glyphicon glyphicon-pencil"></span> </a>  <a href='action.jsp?action=delete&loanid=<%=loan._id%>' class="btn btn-warning btn-lg"><span class="glyphicon glyphicon-trash"></span> 
            </a></a> </td>
 				    	  
 	      </tr>
