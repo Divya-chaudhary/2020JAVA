@@ -6,6 +6,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<body style="background-color:Moccasin;">
 </head>
 <body>
 	<%
@@ -22,7 +23,13 @@
 	System.out.println("#####3#loanId"+loanId);
     db.updateDetails(loanId,borrowername,ph,address,loan,rateofinterest,duration);
 	%>
-   <h3>UPDATE SUCCESSFUL</h3>
+   <center>
+	<br>
+	<h3>UPDATE SUCCESSFUL </h3>
+	
+	<a href='viewloan.jsp'>View your  record again </a> 
+	</center>
+   
    
 </body>
 </html>

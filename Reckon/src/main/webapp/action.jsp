@@ -22,7 +22,6 @@
 		Double duration = Double.parseDouble(request.getParameter("duration"));
      	Double rateofinterest = Double.parseDouble(request.getParameter("rateofinterest"));
 		String ph= request.getParameter("ph");
-	
 		session.setAttribute("loanid", loanId);
 	
 	

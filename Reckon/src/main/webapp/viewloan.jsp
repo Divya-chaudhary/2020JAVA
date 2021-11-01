@@ -78,7 +78,7 @@
 					<td><%= loan.loan %></td>
 					<td><strong><p style="color:orange;"><%= loan.interestearned %> </p></strong></td>
 					<td><strong><p style="color:orange;"><%= loan.totalvalue %></p></strong></td>
-			   <td><a href='action.jsp?action=update&loanid=<%=loan._id%>&borrowername=<%=loan.borrowername%>&ph=<%=loan.ph%>&address=<%=loan.address%>&duration=<%=loan.duration%>&rateofinterest=<%=loan.rateofinterest%>&loan=<%=loan.loan%>' class="btn btn-info btn-lg"><span class="glyphicon glyphicon-pencil"></span> </a>  <a href='action.jsp?action=delete&loanid=<%=loan._id%>' class="btn btn-warning btn-lg"><span class="glyphicon glyphicon-trash"></span> 
+			   <td><a href='action.jsp?action=update&loanid=<%=loan._id%>&borrowername=<%=loan.borrowername%>&ph=<%=loan.ph%>&address=<%=loan.address%>&duration=<%=loan.duration%>&rateofinterest=<%=loan.rateofinterest%>&loan=<%=loan.loan%>' class="btn btn-info btn-lg"><span class="glyphicon glyphicon-pencil"></span> </a>  <a href='delete.jsp?action=delete&loanid=<%=loan._id%>' class="btn btn-warning btn-lg"><span class="glyphicon glyphicon-trash"></span> 
            </a></a> </td>
 				    	  
 	      </tr>
@@ -90,5 +90,15 @@
     </tbody>
   </table>
 </div>
+<center>
+	<br>
+	<h2>Back To Home Page</h2>
+	
+	<a href='home.jsp'>Insert Details Again</a> 
+	</center>
+
+
+
+
 </body>
 </html>

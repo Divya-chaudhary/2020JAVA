@@ -144,7 +144,7 @@ public ArrayList<Loan> fetchLoans(String userId) {
 //      }
 
 public void updateDetails(String loanId ,String borrowername,String ph,String address,Double loan,Double rateofinterest, Double duration) {
-	
+	  
 	BasicDBObject query = new BasicDBObject();
 	query.put("_id", new ObjectId(loanId));
 	
